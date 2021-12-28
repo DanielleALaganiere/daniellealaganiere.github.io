@@ -1,0 +1,170 @@
+
+<!-- Created by Danille Laganiere, 4-5-21 -->
+
+<html>
+  <head>
+    <meta charset = "utf-8">
+    <title>Lab 1 Features</title>
+    <link rel="icon" href="Images/icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Including the CSS Style Sheet-->
+    <link rel="stylesheet" href="../../../main.css">
+  </head>
+
+  <style>
+    html{font-family:Arial}
+    /*top right bottom left*/
+    body{margin:80px 0px 0px 0px}
+    p{margin:0px 20px 0px 20px}
+    h1{margin:10px 20px 0px 20px}
+    h2{margin:10px 20px 0px 20px;
+      padding-top:20px;
+    }
+    h3{margin:10px 20px 0px 20px}
+    .margin{margin:0px 0px 0px 20px}
+    .controls{
+      border: 0.5px solid gray;
+    }
+  </style>
+
+  <body>
+    <!-- add a pretty banner at the top and adjust the width based on the window width-->
+    <img src="Images/Banner.png" class="banner" id="top"></img>
+
+    <!--Top Navigation Bar-->
+    <div class="topnav" id="navbar">
+      <a href="https://people.ucsc.edu/~dlaganie/">Home</a>
+      <a href="../../../resume.html">Resume</a>
+      <a href="../../projects.html">Projects</a>
+      <a href="../../../hobbies.html">Hobbies</a>
+    </div>
+    <br clear="all"><br>
+
+    <!--Header-->
+    <center>
+      <h1>CSE160 Lab 1 - Simple Model / Wireframe</h1>
+      <p>Created by Danielle Laganiere - 4/5/21</p>
+    </center>
+
+    <!--Link to project & prompt-->
+    <h2>Project Links:</h2><br>
+    <p><strong>Assignment:</strong></p>
+    <ul>
+      <li><a href="asg1.html">App</a></li>
+      <li><a href="https://users.soe.ucsc.edu/~pang/160/s21/prog1/">Assignment prompt</a></li>
+    </ul>
+    <!--Link to jump around page-->
+    <p><strong>Feature Page Navigation:</strong></p>
+    <ul>
+      <li><a href="#goals">Goals & Overview</a></li>
+      <li><a href="#user_guide">User guide</a></li>
+      <li><a href="#example">Example</a></li>
+    </ul>
+    <!--Link to supporting code-->
+    <p><strong>Supporting Code Files:</strong></p>
+    <ul>
+      <li><a href="asg1.js">Supporting Javascript file</a></li>
+      <li><a href="lib/cuon-matrix-cse160.js">Matrix library</a></li>
+      <li><a href="lib/cuon-utils.js">WebGl include file 1</a></li>
+      <li><a href="lib/webgl-debug.js">WebGl include file 2</a></li>
+      <li><a href="lib/webgl-utils.js">WebGl include file 3</a></li>
+    </ul>
+    <br><hr/>
+
+
+    <!--Goals & Overview-->
+    <h2 id = "goals">Goals & Overview:</h2><br>
+    <p>
+      This lab utilizes the canvas previously produced in Lab 0 along with elements of WebGL to allow
+      for the drawing of more complex objects. In this case, the object created was a 3D cylinder with
+      a height of 1 and a radius of 1. Using user inputs, the cylinder can have any number of sides and
+      can optionally have end caps. There is also an option for the user to download the current configuration via .coor and .poly
+      files. These can be named anything the user chooses. This will continue to be used and manipulated in future labs to allow
+      for futher complex objects.
+    </p>
+    <br><hr/>
+
+    <!--User Guide-->
+    <h2 id="user_guide">User Guide:</h2><br>
+    <!--Picture of controls-->
+    <img src="Images/Controls_Lab1.png" width="635" height="751" class="controls margin"></img>
+    <br clear="all"><br>
+
+    <!--Explanation of controls-->
+    <p>
+      <strong>Number of sides: </strong>
+      The first input box, labeled "Number of sides:" determines the number of sides the cylinder will have.
+      The larger the number of sides, the more precise and round the cylinder will seem. In order to get a proper
+      shape, there must be a minimum of 3 sides.
+      <br><br>
+      <strong>Draw Endcaps: </strong>
+      The second input, a boolean pull-down labeled "Draw end caps?" determines whether or not the cylinder will
+      have solid caps on each end. If there are no endcaps drawn, just the outline of the cylinder will be shown.
+      <br><br>
+      <strong>Draw Button: </strong>
+      The draw button uses the previous two inputs to create the cylinder image. It must be pressed each time a new cylinder
+      wants to be created.
+      <br><br>
+      <strong>Scale: </strong>
+      The scaling inputs allow the user to alter the cylinder's dimensions. By adding a value, the cylinder will shrink or expand
+      on that axis by that amount. If the scaling factor is less than 1, the shape will shrink, if it is greater than 1, it will 
+      expand. It makes no difference if the inputted number is positive or negative.
+      <br><br>
+      <strong>Translate: </strong>
+      The translation inputs allow the user to move the cylinder in space. By adding a value, the cylinder will shift that amount
+      across the canvas. Each 0.1 accounts for 5% of the canvas's total width, height, or depth, so it best to keep the value between
+      -1 and 1 to ensure the cylinder does not leave the boundaries of the canvas. Adding a positive number in the Tx box will shift the shape
+      in the positive x direction, and adding a negative value in the Tx box will move it in the negative x direction. The same holds
+      true with y and z, although it is difficult to see changes in the z direction from this viewpoint. It should be noted
+      that changes in the z direction may lead to lines of the cylinder being cut-off, affecting the completeness of the cylinder. 
+      <br><br>
+      <strong>Color: </strong>
+      The color inputs allow the user to alter the cylinder's RGB values. By adding a value, the cylinder will change color, changing the 
+      corresponding color value to the percentage value corresponding to the input. Entering 0's in all fields will make the shape black and entering 
+      1's in all fields will make the shape white, which seems invisible against the white canvas.
+      Another "Draw" button can be found below the color inputs. This button works identically to the previous draw button.
+      <br><br>
+      <strong>Download: </strong>
+      The bottom two inputs allow the user to download the coordinates and order of the triangles forming
+      the cylinder. The user can choose to specify the name the file will save as, although it will save as "unknown.txt" if unspecified.
+      The .coor file holds the number of vertices along with the numbered coordinates. The .poly file holds the number of lines,
+      along with the name of the triangles and the coordinates that create it. These points are labeled using the numbered order
+      system from the .coor file.
+    </p>
+   <br><hr/>
+
+   <!--Examples-->
+    <h2 id="example">Example:</h2><br>
+    <img src="Images/5_no_endcap.png" width="300" height="300" class="margin"></img>
+    <img src="Images/5_endcap.png" width="300" height="300" class="margin"></img>
+    <p>
+      Shown above are the images for a 5-sided cylinder, both with and without endcaps. This can be repeated for any n greater or
+      equal to 3.
+    </p>
+    <img src="Images/5_translated_no_endcap.png" width="300" height="300" class="margin"></img>
+    <img src="Images/5_translated.png" width="300" height="300" class="margin"></img>
+    <p>
+      The same 5-sided cylinder is shown again, but translated 0.2 in the negative x direction (Tx = -0.2) and 0.4 in the postitive
+      y direction (Ty = 0.4).
+    </p>
+    <br><br>
+
+    <!--Back to top-->
+    <a href="#top"><img src="../../../Images/back_to_top.png" width="70px" class="rounded margin"></a>
+    <br>
+
+    <!--Dark footer bar for seperation-->
+    <div class="topnav" id="bottombar">
+        <br>
+    </div>
+    <!--Footer with contact info-->
+    <div class="footer" id="contact_info">
+        <i class="footer_textBig">Contact Me:</i> <br>
+        <i class="footer_textSmall">Danielle Laganiere</i> <br>
+        <i class="footer_textSmall">DanielleLaganiere@gmail.com</i> <br>
+        <i class="footer_textSmall">(661) 313-1906</i> <br>
+    </div>
+
+  </body>
+</html>

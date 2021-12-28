@@ -1,0 +1,116 @@
+/* Made by Danielle Laganiere 6/2021 */
+/* Main css to support index */
+
+html{font-family:Arial}
+/*top right bottom left*/
+body{margin: 60px 0px 0px 0px}
+p{margin:0px 25px 0px 25px}
+h2{margin:0px 0px 20px 40px}
+h3{margin:0px 0px 0px 60px}
+
+/*generally useful things*/
+.rounded {
+    border-radius: 10px;
+}
+.centered {
+    text-align: center;
+}
+.indented{
+    margin:0px 150px 0px 150px
+}
+.indented_small{
+    margin:0px 100px 0px 100px
+}
+
+/*Top blue banner*/
+.banner{
+    position:absolute;
+    top:0; left:0; right:0;
+    height: 80;
+    width: 100%;
+}
+
+/*Adding Link Images*/
+.tiny-previews {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+.preview-tiny {
+    position: relative;
+    display: inline-block;
+    padding-left: 30px;
+    padding-right: 30px;
+    max-width: 128px;
+}
+.preview-tiny .tiny-caption-top {
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+}
+.preview-tiny .tiny-img {
+    width: 100%;
+}
+.tab { text-indent:40px }
+.drop-shadow {
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.25);
+    border-radius:10px; 
+    margin-right:70px; 
+    border: 0.5px solid gray;
+}
+
+/*Making the profile picture pretty*/
+img.me {
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.25);
+    float:left; 
+    margin-right:70px; 
+    border-radius:10px; 
+    border: 0.5px solid gray;
+}
+
+/*Top navigation bar*/
+.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: -webkit-sticky; /*Safari friendly sticky*/
+    position: sticky;
+    top: 0;
+}
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+/*what page are you currently on?*/
+.topnav a.active {
+    background-color: #0492C2;
+    color: white;
+}
+
+/*adding a footer to pages for contact info*/
+.footer {
+    background-color: #474747;
+    color: white;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+.footer_textBig{
+    color: white;
+    font-size: 25px;
+}
+.footer_textSmall{
+    color: darkgray;
+    font-size: 18px;
+}

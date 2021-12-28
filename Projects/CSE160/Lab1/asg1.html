@@ -1,0 +1,199 @@
+<!-- Created by Danille Laganiere, 4-5-21 -->
+<!-- description: use webgl to create the wireframe of a cylinder -->
+
+<html>
+  <head>
+    <!-- This sets the tab title-->
+    <meta charset = "utf-8">
+    <title>Lab 1</title>
+    <link rel="icon" href="Images/icon.png">
+
+    <!--example code: http://rodger.global-linguist.com/webgl/ch03/HelloTriangle.html-->
+    <!--load external libraries here using script src-->
+    <script src="lib/cuon-matrix-cse160.js"></script>
+    <script src="lib/cuon-utils.js"></script>
+    <script src="lib/webgl-debug.js"></script>
+    <script src="lib/webgl-utils.js"></script>
+
+    <!--what is the main source? Link it to a js file!-->
+    <script src="asg1.js"></script>
+
+    <!--Including the CSS Style Sheet-->
+    <link rel="stylesheet" href="../../../main.css">
+  </head>
+
+  <style>
+    html{font-family:Arial}
+    canvas{
+      border: 0.5px solid gray;
+      box-shadow: 5px 5px 5px rgba(0,0,0,0.25);
+      border-radius: 10px;
+    }
+    /*used to give the border space*/
+    body{margin:80px 0px 0px 0px}
+    p{margin:0px 20px 0px 20px}
+    h1{margin:10px 20px 0px 20px}
+    h2{margin:10px 20px 0px 20px;
+      padding-top:20px;
+    }
+    h3{margin:10px 20px 0px 20px}
+    label{margin:0px 20px 0px 20px}
+    input{margin:0px 20px 0px 20px}
+    .margin{margin:0px 20px 0px 20px}
+    .banner{
+      position:absolute;
+      top:0; left:0; right:0;
+      height: 80;
+      width: 100%;
+    }
+  </style>
+
+  <!--call the main function from the javascript file-->
+  <body onload="main()">
+    <img src="Images/Banner.png" class="banner"></img>
+
+    <!--Top Navigation Bar-->
+    <div class="topnav" id="navbar">
+      <a href="https://people.ucsc.edu/~dlaganie/">Home</a>
+      <a href="../../../resume.html">Resume</a>
+      <a href="../../projects.html">Projects</a>
+      <a href="../../../hobbies.html">Hobbies</a>
+    </div>
+    <br clear="all"><br>
+
+    <!--Header-->
+    <center>
+      <h1>CSE160 Lab 1 - Simple Model / Wireframe</h1>
+      <p>Created by Danielle Laganiere - 4/5/21</p>
+    </center>
+    <br>
+
+    <!-- This makes a canvas-->
+    <center><canvas id="canvas1" width="400" height="400"></canvas></center>
+    <br>
+
+    <hr/>
+    <h3> Basic Input </h3><br>
+
+    <!--get n (number of sides)-->
+    <label for="n">Number of sides:</label>
+    <input id="n" type="number"></input>
+    <br>
+
+    <!--should we draw the end caps?-->
+    <label for="end_caps">Draw end caps? </label>
+    <select name="end_caps" id="end_caps">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
+    <br><br>
+
+    <!--add in a button that calls the event function-->
+    <input type="button" value="Draw" onclick="DrawCylinder()"></input>
+    <br><br><hr/>
+
+    <h3> Transforming the Cylinder </h3><br>
+    <p>
+      For scaling, keep values between 0 and 1 for best results.
+    </p>
+
+    <br>
+    <label for="ScalingX">Scaling Value X </label>
+    <input id="ScalingX" type="number" step="0.01" value="1">
+    <br>
+    <label for="ScalingY">Scaling Value Y </label>
+    <input id="ScalingY" type="number" step="0.01" value="1">
+    <br>
+    <label for="ScalingZ">Scaling Value Z </label>
+    <input id="ScalingZ" type="number" step="0.01" value="1">
+    <br><br>
+
+    <p>
+      Translate (or move) the shape with Tx, Ty, and Tz.
+      Keep values between -1 and 1 for best results.
+    </p>
+
+    <br>
+    <label for="Tx">Tx value </label>
+    <input id="Tx" type="number" step="0.01" value="0">
+    <br>
+    <label for="Ty">Ty value </label>
+    <input id="Ty" type="number" step="0.01" value="0">
+    <br>
+    <label for="Tz">Tz value </label>
+    <input id="Tz" type="number" step="0.01" value="0">
+    <br><br>
+
+    <p>
+      Rotate the shape with Rx, Ry, and Rz.
+      Keep values between 0 and 1 for best results.
+    </p>
+
+    <br>
+    <label for="RotateX">Rx value </label>
+    <input id="RotateX" type="number" step="0.01" value="0">
+    <br>
+    <label for="RotateY">Ry value </label>
+    <input id="RotateY" type="number" step="0.01" value="0">
+    <br>
+    <label for="RotateZ">Rz value </label>
+    <input id="RotateZ" type="number" step="0.01" value="1">
+    <br>
+    <label for="angle">Angle </label>
+    <input id="angle" type="number" step="0.01" value="0">
+    <br><br>
+
+    <p>
+      What color should it be?
+      Keep values between 0 and 1 for best results.
+    </p>
+
+    <br>
+    <label for="red">Red </label>
+    <input id="red" type="number" step="0.01" value="0">
+    <br>
+    <label for="green">Green </label>
+    <input id="green" type="number" step="0.01" value="0">
+    <br>
+    <label for="blue">Blue </label>
+    <input id="blue" type="number" step="0.01" value="1">
+    <br><br>
+
+    <!--add in a button that calls the event function-->
+    <input type="button" value="Draw" onclick="DrawCylinder()"></input>
+    <br><br>
+
+    <hr/>
+    <h3> Saving the files </h3><br>
+
+    <!--get n (number of sides)-->
+    <label for="coor_filename">Download .coor File</label>
+    <input id="coor_filename" type="input"></input>
+    <!--add in a button that calls the event function-->
+    <input type="button" value="Save Coor" onclick="saveCoor()"></input>
+    <br>
+
+    <label for="poly_filename">Download .poly File</label>
+    <input id="poly_filename" type="input"></input>
+    <!--add in a button that calls the event function-->
+    <input type="button" value="Save Poly" onclick="savePoly()"></input>
+    <br><br><br>
+
+    <!--Back to top-->
+    <a href="#top"><img src="../../../Images/back_to_top.png" width="70px" class="rounded margin"></a>
+    <br>
+
+    <!--Dark footer bar for seperation-->
+    <div class="topnav" id="bottombar">
+        <br>
+    </div>
+    <!--Footer with contact info-->
+    <div class="footer" id="contact_info">
+        <i class="footer_textBig">Contact Me:</i> <br>
+        <i class="footer_textSmall">Danielle Laganiere</i> <br>
+        <i class="footer_textSmall">DanielleLaganiere@gmail.com</i> <br>
+        <i class="footer_textSmall">(661) 313-1906</i> <br>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Lab 4</title>
+
+        <!-- Load external libs -->
+        <script src="lib/cuon-matrix-cse160.js"></script>
+        <script src="lib/cuon-utils.js"></script>
+        <script src="lib/webgl-debug.js"></script>
+        <script src="lib/webgl-utils.js"></script>
+
+        <!-- Load internal libs -->
+        <script src="camera.js"></script>
+        <script src="models/model.js"></script>
+        <script src="models/cube.js"></script>
+        <script src="models/sphere.js"></script>
+        <script src="models/cylinder.js"></script>
+
+        <!-- Load main -->
+        <script src="asg4.js"></script>
+
+        <!--Including the CSS Style Sheet-->
+        <link rel="stylesheet" href="../../../main.css">
+    </head>
+
+    <style>
+        html{font-family:Arial}
+        canvas{
+          border: 0.5px solid gray;
+          box-shadow: 5px 5px 5px rgba(0,0,0,0.25);
+          border-radius: 10px;
+        }
+        /*used to give the border space*/
+        body{margin:80px 0px 0px 0px}
+        p{margin:0px 20px 0px 20px}
+        h1{margin:10px 20px 0px 20px}
+        h2{margin:10px 20px 0px 20px}
+        h3{margin:10px 20px 0px 20px}
+        label{margin:0px 20px 0px 20px}
+        input{margin:0px 20px 0px 20px}
+        select{margin:0px 20px 0px 20px}
+        .margin{margin:0px 20px 0px 20px}
+        .banner{
+          position:absolute;
+          top:0; left:0; right:0;
+          height: 80;
+          width: 100%;
+        }
+      </style>
+
+    <body onload="main()">
+        <!-- add a pretty banner at the top and adjust the width based on the window width-->
+        <img src="Images/Banner.png" class="banner" id="top"></img>
+
+        <!--Top Navigation Bar-->
+        <div class="topnav" id="navbar">
+        <a href="https://people.ucsc.edu/~dlaganie/">Home</a>
+        <a href="../../../resume.html">Resume</a>
+        <a href="../../projects.html">Projects</a>
+        <a href="../../../hobbies.html">Hobbies</a>
+        </div>
+        <br clear="all"><br>
+
+        <!--Header-->
+        <center>
+        <h1>CSE160 Lab 4 - Navigating in your Virtual World</h1>
+        <p>Created by Danielle Laganiere - 5/23/21</p>
+        </center>
+        <br>
+
+        <center>
+            <canvas id="canvas" width="400" height="400" class="rounded"></canvas>
+        </center>
+
+        <br><hr/><br>
+        <select id="cubeSelect">
+            <option selected disabled>Empty</option>
+        </select>
+
+        <br><br>
+        <label>Sphere Rotation:</label>
+        <input id="rotSlider" type="range" min="-180" max="180" oninput="onRotationInput(this.value)"></input>
+
+        <br><br>
+        <label>Zoom Out:</label>
+        <input id="zoomSlider" value="1" type="range" min="1" max="20" oninput="onZoomInput(this.value)"></input>
+
+        <br><br>
+        <p>Move objects in the scene with the following input:</p><br>
+
+        <label>Move the Truck:</label>
+        <input id="truckSlider" value ="-400" type="range" min="-400" max="400" oninput="resetTruckPosition(this.value)"></input>
+
+        <br><br>
+        <label>Time of Day:</label>
+        <input id="sunSlider" value="1" type="range" min="1" max="630" oninput="resetLightPosition(this.value)"></input>
+        <br><br>
+
+        <!--Dark footer bar for seperation-->
+        <div class="topnav" id="bottombar">
+            <br>
+        </div>
+        <!--Footer with contact info-->
+        <div class="footer" id="contact_info">
+            <i class="footer_textBig">Contact Me:</i> <br>
+            <i class="footer_textSmall">Danielle Laganiere</i> <br>
+            <i class="footer_textSmall">DanielleLaganiere@gmail.com</i> <br>
+            <i class="footer_textSmall">(661) 313-1906</i> <br>
+        </div>
+
+    </body>
+</html>

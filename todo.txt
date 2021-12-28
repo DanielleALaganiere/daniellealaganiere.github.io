@@ -1,0 +1,34 @@
+-Add labs from CSE13E
+    requires pic32 to demonstrate labs (do it on video or gifs)
+
+-CSE30 labs:
+    -make pretty graphics and upgrade
+
+-CSE101 Labs:
+    https://classes.soe.ucsc.edu/cse101/Spring20/
+    -Lab 2: arthemetic calculator 
+    -Lab 7: shuffles cards
+
+-CSE100 Labs:
+    -must wait for an FPGA
+    -https://classes.soe.ucsc.edu/cse100/Fall20/
+    -lab 4: counting up and down
+    -lab 5: stop it game
+    -lab 6: turkey counter
+
+-ECE121 Labs:
+    -make notes for now and gifs once you get a pic32 to demonstrate
+    -notes on lab 1: serial/ protocol communication 
+    -notes on lab 2: r/c servo & pulse width
+    -notes on lab 3: non-volatile memory and analog inputs
+    (aka, read and write bytes bb)
+    -notes on lab4: rate control of a DC motor
+
+-take pretty video of buddy goin' (in the roses?)
+    -do the frog bowl too?
+
+-add 3d models (MAKE 3D MODELS!)
+
+- <label> </label>
+-jump to a specific spot (id=...) in another page:
+    <a href="https://en.wikipedia.org/wiki/Main_Page#wikipedia">Go to the main page of Wikipedia.</a>

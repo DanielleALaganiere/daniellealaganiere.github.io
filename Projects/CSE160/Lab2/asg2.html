@@ -1,0 +1,106 @@
+<!-- Created by Danille Laganiere, 5-3-21 -->
+<!-- description: use webgl to create the instances of 3d shapes to create a complex scene -->
+
+<html>
+  <head>
+    <!-- This sets the tab title-->
+    <meta charset = "utf-8">
+    <title>Lab 2</title>
+    <link rel="icon" href="Images/icon.png">
+
+    <!--example code: http://rodger.global-linguist.com/webgl/ch03/HelloTriangle.html-->
+    <!--load external libraries here using script src-->
+    <script src="lib/cuon-matrix-cse160.js"></script>
+    <script src="lib/cuon-utils.js"></script>
+    <script src="lib/webgl-debug.js"></script>
+    <script src="lib/webgl-utils.js"></script>
+
+    <!--what is the main source? Link it to a js file!-->
+    <script src="cube.js"></script>
+    <script src="cylinder.js"></script>
+    <script src="asg2.js"></script>
+
+    <!--Including the CSS Style Sheet-->
+    <link rel="stylesheet" href="../../../main.css">
+  </head>
+
+  <style>
+    html{font-family:Arial}
+    canvas{
+      border: 0.5px solid gray;
+      box-shadow: 5px 5px 5px rgba(0,0,0,0.25);
+      border-radius: 10px;
+    }
+    /*used to give the border space*/
+    body{margin:80px 0px 0px 0px}
+    p{margin:0px 20px 0px 20px}
+    h1{margin:10px 20px 0px 20px}
+    h2{margin:10px 20px 0px 20px}
+    h3{margin:10px 20px 0px 20px}
+    label{margin:0px 0px 0px 20px}
+    input{margin:0px 20px 0px 20px}
+    .margin{margin:0px 20px 0px 20px}
+    .banner{
+      position:absolute;
+      top:0; left:0; right:0;
+      height: 80;
+      width: 100%;
+    }
+  </style>
+
+  <!--call the main function from the javascript file-->
+  <body onload="main()">
+    <img src="Images/Banner.png" class="banner"></img>
+
+    <!--Top Navigation Bar-->
+    <div class="topnav" id="navbar">
+      <a href="https://people.ucsc.edu/~dlaganie/">Home</a>
+      <a href="../../../resume.html">Resume</a>
+      <a href="../../projects.html">Projects</a>
+      <a href="../../../hobbies.html">Hobbies</a>
+    </div>
+    <br clear="all"><br>
+
+    <!--Header-->
+    <center>
+      <h1>CSE160 Lab 2 - Transformation of a Fancier Model</h1>
+      <p>Created by Danielle Laganiere - 5/3/21</p>
+    </center>
+    <br>
+
+    <!-- This makes a canvas-->
+    <center>
+      <canvas id="canvas" width="400" height="400"></canvas>
+    </center>
+    <br><hr/><br>
+
+    <!--rotate it-->
+    <label for="rotSliderX">Rotate around the X axis  </label>
+    <input id="rotSliderX" type="range" min="-180" max="180" oninput="onRotationInputX(this.value)"></input>
+    <br><br>
+    <label for="rotSliderY">Rotate around the Y axis  </label>
+    <input id="rotSliderY" type="range" min="-180" max="180" oninput="onRotationInputY(this.value)"></input>
+
+    <br><br>
+    <!--should we draw wireframe or solid?-->
+    <label for="solid">Drawing Mode </label>
+    <select name="solid" id="solid">
+      <option value="flat_shading">Flat Shading</option>
+      <option value="wireframe">Wireframe</option>
+    </select>
+    <br><br><br>
+
+    <!--Dark footer bar for seperation-->
+    <div class="topnav" id="bottombar">
+      <br>
+    </div>
+    <!--Footer with contact info-->
+    <div class="footer" id="contact_info">
+        <i class="footer_textBig">Contact Me:</i> <br>
+        <i class="footer_textSmall">Danielle Laganiere</i> <br>
+        <i class="footer_textSmall">DanielleLaganiere@gmail.com</i> <br>
+        <i class="footer_textSmall">(661) 313-1906</i> <br>
+    </div>
+
+  </body>
+</html>

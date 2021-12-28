@@ -1,0 +1,153 @@
+
+<!-- Created by Danille Laganiere, 5/23-21 -->
+
+<html>
+  <head>
+    <meta charset = "utf-8">
+    <title>Lab 4 Features</title>
+    <link rel="icon" href="Images/icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Including the CSS Style Sheet-->
+    <link rel="stylesheet" href="../../../main.css">
+  </head>
+
+  <style>
+    html{font-family:Arial}
+    /*top right bottom left*/
+    body{margin:80px 0px 0px 0px}
+    p{margin:0px 20px 0px 20px}
+    h1{margin:10px 20px 0px 20px}
+    h2{margin:10px 20px 0px 20px;
+      padding-top:20px;
+    }
+    h3{margin:10px 20px 0px 20px}
+    label{margin:0px 20px 0px 20px}
+    input{margin:0px 20px 0px 20px}
+    .margin{margin:0px 20px 0px 20px}
+    .banner{
+      position:absolute;
+      top:0; left:0; right:0;
+      height: 80;
+      width: 100%;
+    }
+    .controls{
+      border: 0.5px solid gray;
+    }
+  </style>
+
+  <body>
+    <!-- add a pretty banner at the top and adjust the width based on the window width-->
+    <img src="Images/Banner.png" class="banner" id="top"></img>
+
+    <!--Top Navigation Bar-->
+    <div class="topnav" id="navbar">
+      <a href="https://people.ucsc.edu/~dlaganie/">Home</a>
+      <a href="../../../resume.html">Resume</a>
+      <a href="../../projects.html">Projects</a>
+      <a href="../../../hobbies.html">Hobbies</a>
+    </div>
+    <br clear="all"><br>
+
+    <!--Header-->
+    <center>
+      <h1>CSE160 Lab 4 - Navigating in your Virtual World</h1>
+      <p>Created by Danielle Laganiere - 5/23/21</p>
+    </center>
+
+    <h2>Project Links:</h2><br>
+    <p><strong>Assignment:</strong></p>
+    <ul>
+      <li><a href="index.html">App</a></li>
+      <li><a href="https://users.soe.ucsc.edu/~pang/160/s21/prog4/">Assignment prompt</a></li>
+    </ul>
+    <p><strong>Feature Page Navigation:</strong></p>
+    <ul>
+      <li><a href="#goals">Goals & Overview</a></li>
+      <li><a href="#user_guide">User guide</a></li>
+      <li><a href="#example">Example</a></li>
+    </ul>
+    <p><strong>Supporting Code Files:</strong></p>
+    <ul>
+      <li><a href="asg4.js">Supporting Javascript file</a></li>
+      <li><a href="models/cube.js">Cube class file</a></li>
+      <li><a href="models/cylinder.js">Cylinder class file</a></li>
+      <li><a href="models/sphere.js">Sphere class file</a></li>
+      <li><a href="models/model.js">Base Model class file</a></li>
+      <li><a href="camera.js">Camera class file</a></li>
+      <li><a href="lib/cuon-matrix-cse160.js">Matrix library</a></li>
+      <li><a href="lib/cuon-utils.js">WebGl include file 1</a></li>
+      <li><a href="lib/webgl-debug.js">WebGl include file 2</a></li>
+      <li><a href="lib/webgl-utils.js">WebGl include file 3</a></li>
+    </ul>
+    <br><hr/>
+
+    <h2 id = "goals">Goals & Overview:</h2><br>
+    <p>
+      This lab builds on the previous labs in order to allow the user to interact with and navigate
+      through a virtul world. The user is able to move around, point the camera in different directions,
+      and zoom in in order to navigate through the world. In this case, the scene consists of a city block
+      containing a street with a truck, a couple of buildings, and a pond in the back.
+      In some portion, this scene is randomly generated: the truck color and size of the buildings are
+      randomly generated each time the scene is loaded.
+    </p>
+   <br><hr/>
+
+    <h2 id="user_guide">User Guide:</h2><br>
+    <img src="Images/Controls.png" width="375" height="265" class="controls margin"></img>
+    <br clear="all"><br>
+    <p>
+      <strong>WASD: </strong>
+      In order to move around the world, WASD can be used. W and S allow the user to move forwards and backwards respectively. The user can also
+      look around to the left and the right using the A and D buttons, which then allow the user to walk forward in a new direction. This is the
+      main form of interaction with the world.
+      <br><br>
+      <strong>Sphere Rotating: </strong>
+      The first pull down menu allows you to select one object within the scene to rotate. The actual rotating can be
+      done using the slider labeled "Sphere Rotation". Some smaller cubes might be harder to see, but larger cubes, like "cube1" (which
+      forms the base of the scene), are much more obvious.
+      <br><br>
+      <strong>Zoom Out: </strong>
+      Although WASD is used to move around the world, this slider option can be used to zoom in and out, altering the
+      perspective the user can see. The zoom slider set at zero, aka the far left, gives the most realilistic view, and moving it to the
+      right can warp this view.
+      <br><br>
+      <strong>Move the Truck: </strong>
+      Using the slider, the truck seen in the scene can be moved across the road. It is limited to the edges of the scene's base,
+      but can be moved anywhere within those limits.
+      <br><br>
+      <strong>Time of Day: </strong>
+      Using the slider, the sun, which acts as the light source, can be rotated around the scene. The limits of the slider allow
+      it to make one full rotation around the world, acting as a full day.
+    </p>
+   <br><hr/>
+
+    <h2 id="example">Example:</h2><br>
+    <img src="Images/Image1.png" width="300" height="300" class="margin"></img>
+    <img src="Images/Image2.png" width="300" height="300" class="margin"></img>
+    <img src="Images/Image3.png" width="300" height="300" class="margin"></img>
+    <br clear="all"><br>
+    <p>
+      Shown above is the scene made up of hundred of objects orientated precisely. By using the various controls listed in the
+      "Control" list above, the scene can be manipulated to move the sun, move the truck, and move the camera. Some examples of the scene are shown above.
+    </p>
+    <br><br>
+
+    <!--Back to top-->
+    <a href="#top"><img src="Images/back_to_top.png" width="70px" class="rounded margin"></a>
+    <br>
+
+    <!--Dark footer bar for seperation-->
+    <div class="topnav" id="bottombar">
+        <br>
+    </div>
+    <!--Footer with contact info-->
+    <div class="footer" id="contact_info">
+        <i class="footer_textBig">Contact Me:</i> <br>
+        <i class="footer_textSmall">Danielle Laganiere</i> <br>
+        <i class="footer_textSmall">DanielleLaganiere@gmail.com</i> <br>
+        <i class="footer_textSmall">(661) 313-1906</i> <br>
+    </div>
+
+  </body>
+</html>

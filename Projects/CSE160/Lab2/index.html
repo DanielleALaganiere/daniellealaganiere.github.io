@@ -1,0 +1,127 @@
+
+<!-- Created by Danille Laganiere, 4-22-21 -->
+
+<html>
+  <head>
+    <meta charset = "utf-8">
+    <title>Lab 2 Features</title>
+    <link rel="icon" href="Images/icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Including the CSS Style Sheet-->
+    <link rel="stylesheet" href="../../../main.css">
+  </head>
+
+  <style>
+    html{font-family:Arial}
+    /*top right bottom left*/
+    body{margin:80px 0px 0px 0px}
+    p{margin:0px 20px 0px 20px}
+    h1{margin:10px 20px 0px 20px}
+    h2{margin:10px 20px 0px 20px;
+      padding-top:20px;
+    }
+    h3{margin:10px 20px 0px 20px}
+    label{margin:0px 20px 0px 20px}
+    input{margin:0px 20px 0px 20px}
+    .margin{margin:0px 20px 0px 20px}
+    .banner{
+      position:absolute;
+      top:0; left:0; right:0;
+      height: 80;
+      width: 100%;
+    }
+    .controls{
+      border: 0.5px solid gray;
+    }
+  </style>
+
+  <body>
+    <!-- add a pretty banner at the top and adjust the width based on the window width-->
+    <img src="Images/Banner.png" class="banner" id="top"></img>
+
+    <!--Top Navigation Bar-->
+    <div class="topnav" id="navbar">
+      <a href="https://people.ucsc.edu/~dlaganie/">Home</a>
+      <a href="../../../resume.html">Resume</a>
+      <a href="../../projects.html">Projects</a>
+      <a href="../../../hobbies.html">Hobbies</a>
+    </div>
+    <br clear="all"><br>
+
+    <!--Header-->
+    <center>
+      <h1>CSE160 Lab 2 - Transformation of a Fancier Model</h1>
+      <p>Created by Danielle Laganiere - 5/3/21</p>
+    </center>
+
+    <h2>Project Links:</h2><br>
+    <p><strong>Assignment:</strong></p>
+    <ul>
+      <li><a href="asg2.html">App</a></li>
+      <li><a href="https://users.soe.ucsc.edu/~pang/160/s21/prog2/">Assignment prompt</a></li>
+    </ul>
+    <p><strong>Feature Page Navigation:</strong></p>
+    <ul>
+      <li><a href="#goals">Goals & Overview</a></li>
+      <li><a href="#user_guide">User guide</a></li>
+      <li><a href="#example">Example</a></li>
+    </ul>
+    <p><strong>Supporting Code Files:</strong></p>
+    <ul>
+      <li><a href="asg2.js">Supporting Javascript file</a></li>
+      <li><a href="cube.js">Cube class file</a></li>
+      <li><a href="cylinder.js">Cylinder class file</a></li>
+      <li><a href="lib/cuon-matrix-cse160.js">Matrix library</a></li>
+      <li><a href="lib/cuon-utils.js">WebGl include file 1</a></li>
+      <li><a href="lib/webgl-debug.js">WebGl include file 2</a></li>
+      <li><a href="lib/webgl-utils.js">WebGl include file 3</a></li>
+    </ul>
+    <br><hr/>
+
+    <h2 id = "goals">Goals & Overview:</h2><br>
+    <p>
+      This lab utilizes the 3D cylinders previously produced in Lab 1, along with elements of WebGL to allow
+      for the drawing of more complex scenes. In this case, the scene was created using a variety of
+      cylinders and cubes, rotated, translated, scaled, and colored to represent a bookshelf. This lab also
+      introduced the idea fo flat shading, which allows the objects to both appear more 3D and better describe
+      the different faces.
+    </p>
+   <br><hr/>
+
+    <h2 id="user_guide">User Guide:</h2><br>
+    <img src="Images/Controls.png" width="364" height="111" class="controls margin"></img>
+    <br clear="all"><br>
+
+    <p>
+      <strong>Rotating: </strong>
+      The first two sliding inputs allow the user to rotate the scene around the x and y axis.
+      This allows for the demonstration of the flat shading, as well as the inspection of certain visual details.
+      The scene will update automatically upon input change.
+      <br><br>
+      <strong>Drawing Mode: </strong>
+      Behind the scenes, everything within the figure is made with various triangles connecting points in space.
+      The drop down menu, titled "Drawing Mode" allows the user to determine the mode in which the scene is drawn
+      using those triangles. The default mode, "Flat Shading", shows the scene as it is meant to be: filled in with bold color and shading.
+      The second mode, "Wireframe", allows the user to see the colored outline of the figures, without the triangles filled in.
+      Once again, the figure is automatically updated upon input change.
+    </p>
+    <br><hr/>
+
+    <h2 id="example">Example:</h2><br>
+    <img src="Images/Bookshelf.png" width="300" height="300" class="margin"></img>
+    <img src="Images/Bookshelf_rotated.png" width="300" height="300" class="margin"></img>
+    <br>
+    <p>
+      Shown above is the scene made using manipulated cylinders and cubes, which was created last lab.
+      As seen, the bookshelf can be rotated around both the x and y axis. In this case, the scene is rotated
+      a small amount around the y axis.
+    </p>
+    <br><br>
+
+    <!--Back to top-->
+    <a href="#top"><img src="Images/back_to_top.png" width="70px"></a>
+    <br><br>
+
+  </body>
+</html>
