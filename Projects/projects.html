@@ -108,13 +108,12 @@
     </div> <br> 
     
     <h3>Overview:</h3>
-    <p style = "text-indent:1cm;">
+    <p>
       The goal of this project was to create an autonomous ground robot to effectively and robustly navigate a 
       standardized 8’x8’ field and avoid obstacles. This would involve designing, CADing, and lazer cutting a chassis; designing, 
       breadboarding, and soildering circuit boards and sensors; and creating a complex hierarchical state machine all from scratch
       within the frame of five weeks.
-    </p> <br>
-    <p style = "text-indent:1cm;">
+      <br>
       In order to complete the challenge, the robot must locate three randomly placed triangular vat towers 
       around the field, marked with a 2kHz beacon on the top; identify the correct side, marked with a 25kHz trackwire; 
       and identify the correct hole on that side, marked with black tape; and drop a ball into it. It should also be noted 
@@ -134,7 +133,7 @@
     <br>
 
     <h3>Team Dynamics</h3>
-    <p style = "text-indent:1cm;">
+    <p>
       Within the three person group, although each team member was involved in every portion of the robot, generally one person acted as 
       the primary lead (with focuses including CAD, circuit, and software development) and the remaining group members would act as product reviewers. 
       With my extensive experience and confidence in programming, I acted as the lead embedded systems developer, which included brainstorming complex logic and 
@@ -143,7 +142,7 @@
     </p> <br>
 
     <h3>Software Development</h3>
-    <p style = "text-indent:1cm;">
+    <p>
       The hierarchical state machine which was used to control the robot relied very heavily on a bump-based wall follow technique. 
       This would include pivoting on one wheel until the corresponding bumper hit the vat tower, unpivoting
       60 degrees, and moving forward a small amount before repeating the process. This would ensure
@@ -152,9 +151,7 @@
       would simply turn 180 degrees and repeat the process, bumping along the other side of the robot. 
       This can be seen in the <a href="#mech">gif demonstration above</a>, and allowed the robot to both navigate a newly found tower in an attempt
       to find the correct hole, as well as navigating around a completed tower in an attempt to find the next target.
-    </p> <br>
-
-    <p style = "text-indent:1cm;">
+      <br>
       Although the group originally had “parallel parking” with standard turns to get to a proper position to dispense a ball,
       this proved to be extremely inefficient, and would either take far too long or not get close enough for the ramp to correctly
       dispense the ball. To remedy this issue, the group added two additional tape sensors on the side
@@ -170,7 +167,7 @@
       <a href="#top"><img src="Mechatronics/Mech_Statemachine.png" height="800px"></a>
     </div> <br>
 
-    <p style = "text-indent:1cm;">
+    <p>
       It should be noted, because the robot would sometimes get stuck on either the bumper or the wheels, each state has a pseudo-watchdog
       timer that would jolt it out of its current state and position to help it become dislodged. This being said, in the end, the group was left with an effective and functional robot that could robustly autonomously navigate a randomized field and 
       consistently complete the challenge in well under two minutes. 
@@ -195,47 +192,50 @@
     <h1 id="capstone"><center>Capstone Project</center></h1>
 
     <h3>Overview:</h3>
-    <p style = "text-indent:1cm;">
+    <p>
       In order to demonstrate a real-world application of the various skills and experiences I have gained
-      throughout my time in university, I am participating in a year-long capstone course. This has thus far included
-      brainstorming and researching potential problems, working through the initial engineering design cycle, and 
-      completing in-depth engineering team declarations.
-    </p> <br>
-
-    <p style = "text-indent:1cm;">
+      throughout my time in university, I am participating in a year-long capstone course. 
       For my project, I was given the opportunity to join an eight person team with the goal of participating in the
-      <a href="https://citris-uc.org/labs-programs/aviation-and-uav-facilities/citris-aviation-prize-2021/#the-competition">CITRIS 2021 Aviation Competetion</a>,
+      <a href="https://citris-uc.org/labs-programs/aviation-and-uav-facilities/citris-aviation-prize-2021/">CITRIS 2021 Aviation Competetion</a>,
       which, simply put, focuses on developing a long-distance, fully autonomous UAV which is able to navigate a 115 mile 
       route and complete an extensive ecological survey. There are detailed and specific rules for the UAV, the ecological survey,
       and the proposal, all of which are detailed in the link above.
     </p> <br> <br>
 
+    <h3>Team Management:</h3>
+    <p>
+      In order to complete such an extensive project, it is important to have proper team organization and documentation.
+      This includes creating extensive team charters, which not only helps set concrete expectations for each member of the team,
+      but also assigns both technical and managerial roles to ensure a smooth team dynamic. As a Documentation Lead, I will act
+      as a quality checker for all official documents that leave the group, both to our client and to our professors. I will also
+      act as a Team Progress Lead, with the goal of leading the SCRUM and agile development process as well as ensuring all team 
+      members are able to keep up with their current load and upcoming deadlines. 
+    </p>
+
+    <table class="styled-table">
+      <thead>
+          <tr>
+              <th>Role</th>
+              <th>Responsibilities</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>Documentation Lead</td>
+              <td>Act as a quality checker for all official documents that leave the group, 
+                both to our client and to our professors.</td>
+          </tr>
+          <tr class="active-row">
+              <td>Team Progress Lead</td>
+              <td>Lead the SCRUM and agile development process, as well as ensuring all team 
+                members are able to keep up with their current load and upcoming deadlines.</td>
+          </tr>
+          <!-- and so on... -->
+      </tbody>
+    </table>
+
     <h3>Project Summary:</h3>
-    <p style = "text-indent:1cm;">
-      In order to demonstrate a real-world application of the various skills and experiences I have gained
-      throughout my time in university, I am participating in a year-long capstone course. This has thus far included
-      brainstorming and researching potential problems, working through the initial engineering design cycle, and 
-      completing in-depth engineering team declarations.
-    </p> <br><br>
-
-    <div class="tiny-previews centered">
-      <!--Lab Writeup-->
-      <div class="preview-tiny">
-        <h4>Lab Writeup</h4>
-        <div class="tiny-caption-top">
-          <a href="Capstone/Capstone_CITRISProposal.pdf">
-            <p></p>
-          </a>
-        </div>
-        <div class="tiny-img">
-          <a href="Capstone/Capstone_CITRISProposal.pdf">
-            <img src="Capstone/Capstone_Icon.png" height="128px" class="rounded">
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <p style = "text-indent:1cm;">
+    <p>
       Although my team was not fortunate enough to be chosen for the CITRIS competition, interest from 
       various related companies and organizations indicates promising sources of both funding and mentorship.
       This page will be updated as both clients are secured and progress on the UAV is made. Keep tuned!
@@ -247,8 +247,6 @@
     <br>
 
     <hr/><br>
-
-
 
     <!------------------------------WEBGL------------------------------->
     <h1 id="webgl"><center>WebGL / JavaScript</center></h1>
