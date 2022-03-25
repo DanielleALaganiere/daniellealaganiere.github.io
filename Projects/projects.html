@@ -55,7 +55,7 @@
 
       <!--Capstone:-->
       <div class="preview-tiny">
-        <h4>Drone-based Capstone</h4>
+        <h4>Airship Senior Design Project</h4>
         <div class="tiny-caption-top">
           <a href="#capstone_top">
             <p></p>
@@ -110,8 +110,8 @@
     <h3>Overview:</h3>
     <p>
       The goal of this project was to create an autonomous ground robot to effectively and robustly navigate a 
-      standardized 8’x8’ field and avoid obstacles. This would involve designing, CADing, and lazer cutting a chassis; designing, 
-      breadboarding, and soildering circuit boards and sensors; and creating a complex hierarchical state machine all from scratch
+      standardized 8’x8’ field and avoid obstacles. This would involve designing, CADing, and laser cutting a chassis; designing, 
+      breadboarding, and soldering circuit boards and sensors; and creating a complex hierarchical state machine all from scratch
       within the frame of five weeks.
       <br><br>
       In order to complete the challenge, the robot must locate three randomly placed triangular vat towers 
@@ -137,7 +137,7 @@
       Within the three person group, although each team member was involved in every portion of the robot, generally one person acted as 
       the primary lead (with focuses including CAD, circuit, and software development) and the remaining group members would act as product reviewers. 
       With my extensive experience and confidence in programming, I acted as the lead embedded systems developer, which included brainstorming complex logic and 
-      working with my teammates to ensure the hardware and software are able to complement eachother efficiently to execute said logic. 
+      working with my teammates to ensure the hardware and software are able to complement each other efficiently to execute said logic. 
       This also involved making rapid significant logical changes as the project developed and debugging the increasing complex system. 
     </p> <br>
 
@@ -189,45 +189,48 @@
 
 
     <!------------------------------CAPSTONE------------------------------->
-    <h1><center>Capstone Project</center></h1>
+    <h1><center>Airship Senior Design Project</center></h1>
 
     <h3>Overview:</h3>
     <p>
-      In order to demonstrate a real-world application of the various skills and experiences I have gained
+      In order to demonstrate a real-world application of the extensive skills and experiences I have gained
       throughout my time in university, I am participating in a year-long capstone course. 
-      For my project, I was given the opportunity to join an eight person team with the goal of participating in the
-      <a href="https://citris-uc.org/labs-programs/aviation-and-uav-facilities/citris-aviation-prize-2021/">CITRIS 2021 Aviation Competetion</a>,
-      which, simply put, focuses on developing a long-distance, fully autonomous UAV which is able to navigate a 115 mile 
-      route and complete an extensive ecological survey. There are detailed and specific rules for the UAV, the ecological survey,
-      and the proposal, all of which are detailed in the link above.
+      For my project, I was given the opportunity to join an eight person team with the goal of developing a long-distance, fully autonomous UAV 
+      which is able to complete an extensive ecological survey. As a software lead, I created a complex heirarchial state machine which
+      communicated between two on-board computers as well as a ground station, as well as integrating two computer vision algorithms.
+      This project was managed using SCRUM and Agile techniques, which includes gantt charts, daily standups, and sprint plannings/reviews.
+      <br><br>
+      It should be noted that the team is split into two subteams- the vehicle team and the payload team. The payload team, which is my
+      main focus, is responsible for taking a physical airship and adding the required sensors, OBCs, and environmental payload in order to
+      allow for autonomous mission.
     </p> <br> <br>
 
-    <h3>Project Summary:</h3>
+    <h3>Project Purpose:</h3>
     <p>
       With many bodies of water in remote and hard to reach locations, sending a hydrologist out to conduct 
       water quality assessments can be difficult and time consuming. In order to help resolve this, my group aims
       to implement a UAV payload that can be designed with a 
       multiparameter water quality probe (aka “sonde”) to reach these remote bodies of water much easier than a 
       hydrologist on foot can and collect useful data from a wide range of points along the water’s surface. However, 
-      current UAV technologies lack the ability to hover for long periods of time while also maintaining a 115 mile long vehicle 
-      range, characteristics necessary for this application of hydrology research in remote areas. A lighter than air UAV 
+      current UAV technologies lack the ability to hover for long periods of time while also maintaining an extensive weight load,
+      characteristics necessary for this application. A lighter than air UAV 
       would eliminate the costly energy consumption of hovering and enable the craft to travel longer distances more efficiently.
       In order to meet these requirements, the group decided to focus on the creation of an airship, with the delivery of the 
       sensor payload being facilitated by a winch.
-      <br><br>
-      Although my team was not fortunate enough to be chosen for the CITRIS competition, interest from 
-      various related companies and organizations indicates promising sources of both funding and mentorship.
-      This page will be updated as both clients are secured and progress on the UAV is made. Keep tuned!
     </p> <br> <br>
 
-    <h3>Team Management:</h3>
+    <h3>Software Progress:</h3>
     <p>
-      In order to complete such an extensive project, it is important to have proper team organization and documentation.
-      This includes creating extensive team charters, which not only helps set concrete expectations for each member of the team,
-      but also assigns both technical and managerial roles to ensure a smooth team dynamic. As a Documentation Lead, I will act
-      as a quality checker for all official documents that leave the group, both to our client and to our professors. I will also
-      act as a Team Progress Lead, with the goal of leading the SCRUM and agile development process as well as ensuring all team 
-      members are able to keep up with their current load and upcoming deadlines. 
+      In order to complete an autonomous mission, the airship will utilize the open source autopilot system Ardupilot. A custom vehicle model
+      will be created to ensure an appropiate feedback control system and thus a successful autonomous mission. This will be
+      run on the vehicle OBC, a PixHawk 4. It will communicate via MAVLinks, a lightweight messaging protocol, with both a ground station and the 
+      embedded system heirarchial state machine being run on the payload OBC, a Raspberry Pi 4. 
+      <a><img src="../Projects/Capstone/Overarching_System.png" width="100px" class="rounded"></a>
+      <br><br>
+      The embedded system will incorportate two computer vision implementations, one for obsticle avoidance during flight and one for water detection 
+      below the drone; this will likely utilize the TF Lite Algorithm as it has excellent FPS and minimal lag, although there will 
+      need to be a lot of work completed in order to ensure proper detection performance.
+      <a><img src="../Projects/Capstone/Computer_Vision_Gif.gif" width="100px" class="rounded"></a>
     </p>
 
     <!--Back to top-->
